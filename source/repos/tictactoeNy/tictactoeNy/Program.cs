@@ -10,29 +10,46 @@ namespace tictactoeNy
     {
       static bool x = true;
 
-        static int y = 0;
 
-  
+        static int howManyTurnsPlayed;
 
+        static int winner = 0;
 
-
-
+        static int choice;
 
         // vart vill spelare lägga sin  mark
 
-        static int whoWon = 0; // if 1 har någon vunnit om -1 draw 0 fortsätter
+        
 
         static void Main(string[] args)
         {
             var showBoard = new ShowBoard();
-            var playing = new playerTurn();
+            var playerTurn = new PlayerTurn();
             var markSpot = new Markspot();
             var updateBoard = new UpdateBoard();
+            var gameOutcome = new GameOutcome();
 
 
-            while (true)
+            
+
+            while (winner != 1)
             {
+                winner = gameOutcome.IsItWin();
+              
                 updateBoard.UpdatingBoard();
+
+                markSpot.placeMark(); // Places the player mark (X or O) on the spot they choose
+
+                gameOutcome.IsItWin();
+                howManyTurnsPlayed++;
+
+                if (howManyTurnsPlayed == 9 && winner != 1)
+                {
+                    gameOutcome.draw();
+                    winner = 1;
+                }
+
+              
 
             }
 

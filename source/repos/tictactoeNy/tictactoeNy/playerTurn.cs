@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tictactoeNy
 {
-  public class playerTurn : ShowBoard
+  public class PlayerTurn : ShowBoard
     {
 
 
@@ -42,6 +42,22 @@ namespace tictactoeNy
 
             while (y <= 0);
 
+        }
+
+
+        
+        public void whicePlayerWon()
+        {
+            if (player % 2 == 0)
+            {
+                Console.WriteLine("Congrats player 2 won");
+            }
+
+            else
+
+            {
+                Console.WriteLine("Congrats player 1 won");
+            }
         }
 
 

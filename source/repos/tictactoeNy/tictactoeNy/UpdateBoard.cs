@@ -9,9 +9,9 @@ namespace tictactoeNy
  public class UpdateBoard
     {
         ShowBoard showBoard = new ShowBoard();
-        playerTurn playerTurn = new playerTurn();
+        PlayerTurn playerTurn = new PlayerTurn();
         Markspot markSpot = new Markspot();
-
+        GameOutcome gameOutcome = new GameOutcome();
         public void UpdatingBoard()
         {
             Console.Clear();
@@ -20,18 +20,18 @@ namespace tictactoeNy
 
             playerTurn.whicePlayerToPlay(); // What player turn is it
 
+            gameOutcome.IsItWin();
+
+       
          
-
-            markSpot.placeMark(); // Places the player mark (X or O) on the spot they choose
-
-
+         
 
 
         }
 
         public static void whicePlayerIsXAndO()
         {
-            Console.WriteLine("Player 1: X and player 2: O \n \n");
+            Console.WriteLine("Player 1: O and player 2: X \n \n");
 
         }
     }

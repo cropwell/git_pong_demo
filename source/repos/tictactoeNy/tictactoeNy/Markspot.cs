@@ -8,29 +8,45 @@ namespace tictactoeNy
 {
    public class Markspot : ShowBoard
     {
-        public static int player = 1;
+        PlayerTurn playerTurn = new PlayerTurn();
+        public static int player = 0;
+        public static int winner = 0;
 
         int choice = 0;
 
         public void  placeMark()
         {
-            choice = int.Parse(Console.ReadLine());
-            if (arr[choice] != 'X' && arr[choice] != 'O')
+           
+            GameOutcome gameOutcome = new GameOutcome();
+            winner = gameOutcome.IsItWin();
+            if (winner != 1)
             {
-
-                if (player % 2 == 0 )
+                gameOutcome.aa();
+                choice = int.Parse(Console.ReadLine());
+                if (arr[choice-1] != 'X' && arr[choice-1] != 'O')
                 {
-                    arr[choice] = 'O';
-                    player++;
-                }
 
-                else
-                {
-                    arr[choice] = 'X';
-                    player++;
-                }
+                    if (player % 2 == 0)
+                    {
+                        arr[choice-1] = 'O';
+                        player++;
+                    }
 
+                    else
+                    {
+                        arr[choice-1] = 'X';
+                        player++;
+                    }
+
+                }
             }
+
+            else
+            {
+                playerTurn.whicePlayerWon();
+            }
+
+           
         }
 
        
