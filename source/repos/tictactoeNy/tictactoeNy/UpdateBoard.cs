@@ -12,10 +12,15 @@ namespace tictactoeNy
         PlayerTurn playerTurn = new PlayerTurn();
         Markspot markSpot = new Markspot();
         GameOutcome gameOutcome = new GameOutcome();
+        TrackWins trackWins = new TrackWins();
+
         public void UpdatingBoard()
         {
+
             Console.Clear();
+      
             whicePlayerIsXAndO();
+          
             showBoard.Board(); // show boards
 
             playerTurn.whicePlayerToPlay(); // What player turn is it
@@ -31,8 +36,10 @@ namespace tictactoeNy
 
         public static void whicePlayerIsXAndO()
         {
-            Console.WriteLine("Player 1: O and player 2: X \n \n");
+            Console.WriteLine("Player 1: O and player 2: X \n ");
 
         }
+
+        
     }
 }

@@ -17,6 +17,8 @@ namespace tictactoeNy
 
         static int choice;
 
+        
+
         // vart vill spelare lägga sin  mark
 
         
@@ -28,12 +30,17 @@ namespace tictactoeNy
             var markSpot = new Markspot();
             var updateBoard = new UpdateBoard();
             var gameOutcome = new GameOutcome();
+            var trackWins = new TrackWins();
 
+            var player1Wins = 0;
+            var player2Wins = 0;
+        
+          
 
-            
-
-            while (winner != 1)
+            while (winner != 1 )
             {
+
+              
                 winner = gameOutcome.IsItWin();
               
                 updateBoard.UpdatingBoard();
@@ -41,17 +48,28 @@ namespace tictactoeNy
                 markSpot.placeMark(); // Places the player mark (X or O) on the spot they choose
 
                 gameOutcome.IsItWin();
+                
+
+                
                 howManyTurnsPlayed++;
 
                 if (howManyTurnsPlayed == 9 && winner != 1)
                 {
                     gameOutcome.draw();
-                    winner = 1;
+                    winner = 0;
                 }
 
-              
+               
+                
+
+                
 
             }
+
+
+
+          
+          
 
             //  showBoard.Board(); // show boards
 

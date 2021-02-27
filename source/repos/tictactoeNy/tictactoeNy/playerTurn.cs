@@ -46,18 +46,7 @@ namespace tictactoeNy
 
 
         
-        public void whicePlayerWon()
-        {
-            if (player % 2 == 0)
-            {
-                Console.WriteLine("Congrats player 2 won");
-            }
-
-            else
-
-            {
-                Console.WriteLine("Congrats player 1 won");
-            }
+    
         }
 
 
@@ -67,4 +56,4 @@ namespace tictactoeNy
 
 
     }
-}
+

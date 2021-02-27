@@ -7,25 +7,28 @@ using System.Threading.Tasks;
 namespace tictactoeNy
 {
 
-   
+
 
     public class GameOutcome : ShowBoard
     {
         // winner
-       
+        public static int player = 1;
+        public int Player1 = 0;
+        public int player2 = 0;
 
-    public static int winner = 0; // 
-        public int  IsItWin()
+
+        public static int winner = 0; // 
+        public int IsItWin()
         {
 
-            
+
             if (arr[0] == arr[1] && arr[1] == arr[2]) // arr[0] är värde 1 på planen 
             {
-               return 1;
+                return 1;
             }
-         
 
-            else if(arr[3] == arr[4] && arr[4] == arr[5])
+
+            else if (arr[3] == arr[4] && arr[4] == arr[5])
             {
                 return 1;
             }
@@ -67,6 +70,29 @@ namespace tictactoeNy
             Console.WriteLine("It is a draw");
         }
 
+
+        public void whicePlayerWon()
+        {
+            if (player % 2 == 0)
+            {
+                Console.WriteLine("Congrats player 2 won");
+                
+            }
+
+            else
+
+            {
+                Console.WriteLine("Congrats player 1 won");
+              
+              
+            }
+
+
+        }
+
+   
+
+     
 
 
     }

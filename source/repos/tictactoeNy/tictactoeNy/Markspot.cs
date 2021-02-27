@@ -21,7 +21,7 @@ namespace tictactoeNy
             winner = gameOutcome.IsItWin();
             if (winner != 1)
             {
-                gameOutcome.aa();
+                
                 choice = int.Parse(Console.ReadLine());
                 if (arr[choice-1] != 'X' && arr[choice-1] != 'O')
                 {
@@ -43,7 +43,8 @@ namespace tictactoeNy
 
             else
             {
-                playerTurn.whicePlayerWon();
+                gameOutcome.whicePlayerWon();
+                arr = defaultArr;
             }
 
            
